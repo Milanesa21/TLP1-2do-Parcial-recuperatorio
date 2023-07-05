@@ -16,6 +16,7 @@ newReservaForm.addEventListener('submit', async (e) => {
   };
 
   try {
+    
     const response = await fetch('http://localhost:8000/api/reservas', {
       method: 'POST',
       headers: {
@@ -23,7 +24,7 @@ newReservaForm.addEventListener('submit', async (e) => {
       },
       body: JSON.stringify(formData),
     });
-
+    console.log(response)
     const respToJson = await response.json();
 
     console.log(respToJson);

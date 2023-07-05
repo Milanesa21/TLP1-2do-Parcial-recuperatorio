@@ -42,8 +42,14 @@ CREATE TABLE `reservas` (
 -- Volcado de datos para la tabla `reservas`
 --
 
-INSERT INTO `reservas` (`id`, `fullname`, `flightCode`, `date`, `time`, ) VALUES
-
+INSERT INTO `reservas` (`id`, `fullname`, `flightCode`, `date`, `time`, `created_at`, `updated_at`, `deleted_at`) VALUES
+  (1, 'John Doe', 'ABC123', '2023-06-21', '12:30:00', '2023-06-21 12:00:00', '2023-06-21 12:00:00', NULL),
+  (2, 'Jane Smith', 'DEF456', '2023-06-22', '15:45:00', '2023-06-22 09:00:00', '2023-06-22 09:00:00', NULL),
+  (3, 'Michael Johnson', 'GHI789', '2023-06-23', '09:15:00', '2023-06-23 17:30:00', '2023-06-23 17:30:00', NULL),
+  (4, 'Emily Davis', 'JKL012', '2023-06-24', '14:00:00', '2023-06-24 10:45:00', '2023-06-24 10:45:00', NULL),
+  (5, 'Robert Wilson', 'MNO345', '2023-06-25', '18:20:00', '2023-06-25 15:20:00', '2023-06-25 15:20:00', NULL),
+  (6, 'Sophia Thompson', 'PQR678', '2023-06-26', '11:10:00', '2023-06-26 13:55:00', '2023-06-26 13:55:00', NULL),
+  (7, 'Oliver Martin', 'STU901', '2023-06-27', '16:45:00', '2023-06-27 08:30:00', NULL)
 
   -- Índices para tablas volcadas
 --

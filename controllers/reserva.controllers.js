@@ -87,6 +87,7 @@ ctrlReservas.show = async (req, res) => {
 // Crear una reserva
 ctrlReservas.store = async (req, res) => {
   const { fullname, flightCode, date, time } = req.body;
+  console.log(req.body)
   try {
     const reserva = await Reserva.create({
       fullname,
@@ -94,14 +95,19 @@ ctrlReservas.store = async (req, res) => {
       date,
       time,
     });
+    console.log(reserva)
     if (!reserva) {
       throw {
         status: 400,
         message: "No se pudo crear la reserva.",
       };
     }
+    if(reserva)console.log("reserva", reserva)
+    
     res.json(reserva);
+    console.log("👿esto es el json que envio", reserva )
   } catch (error) {
+    //return
     res.status(error.status || 500).json(error.message || "Error interno del servidor");
   }
 };
@@ -110,6 +116,7 @@ ctrlReservas.store = async (req, res) => {
 ctrlReservas.update = async (req, res) => {
   const reservaId = req.params.id;
   const { fullname, flightCode, date, time } = req.body;
+
   try {
     const reserva = await Reserva.findByPk(reservaId);
     if (!reserva) {
